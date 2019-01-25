@@ -27,6 +27,8 @@ cp -r public/* build/
 
 echo 'Committing the site to git and pushing'
 (
+    git config user.name "${GITHUB_ACTOR}" && \
+    git config user.email "${GITHUB_ACTOR}@users.noreply.github.com" && \
     cd "${BUILD_DIR}" && \
     git add . && \
     git commit -m "Publishing site $(date)" && \
