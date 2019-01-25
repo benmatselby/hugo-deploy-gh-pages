@@ -26,8 +26,11 @@ echo 'Moving the content over'
 cp -r public/* build/
 
 echo 'Committing the site to git and pushing'
-git add . && \
-git commit -m "Publishing site $(date)" && \
-git push origin master
+(
+    cd "${BUILD_DIR}" && \
+    git add . && \
+    git commit -m "Publishing site $(date)" && \
+    git push origin master
+)
 
 echo 'Complete'
