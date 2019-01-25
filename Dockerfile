@@ -11,7 +11,8 @@ ENV HUGO_VERSION 0.53
 RUN	apk add --no-cache \
 	bash \
 	ca-certificates \
-	curl
+	curl \
+	git
 
 RUN curl -sSL https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz > /tmp/hugo.tar.gz && tar -f /tmp/hugo.tar.gz -xz
 RUN mv /hugo /usr/bin/hugo
