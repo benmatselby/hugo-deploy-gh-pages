@@ -41,3 +41,11 @@ This will:
 - Clone the `TARGET_REPO` into the `build` folder.
 - Commit the changes with the `date` as the git commit message.
 - Push back to GitHub.
+
+## Testing
+
+To test this action locally, you can run the following in your hugo site:
+
+```shell
+TARGET_REPO=benmatselby/benmatselby.github.io ../hugo-deploy-gh-pages/action.sh
+```
