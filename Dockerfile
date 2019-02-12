@@ -6,7 +6,7 @@ LABEL "com.github.actions.description"="Build and deploy a hugo site to GitHub P
 LABEL "com.github.actions.icon"="target"
 LABEL "com.github.actions.color"="purple"
 
-ENV HUGO_VERSION 0.53
+ENV HUGO_VERSION 0.54.0
 
 RUN	apk add --no-cache \
 	bash \
