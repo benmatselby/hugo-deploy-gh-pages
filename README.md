@@ -1,8 +1,8 @@
-# GitHub Action to build and deploy a hugo site to GitHub Pages
+# GitHub Action to build and deploy a Hugo site to GitHub Pages
 
 [![Build Status](https://travis-ci.org/benmatselby/hugo-deploy-gh-pages.png?branch=master)](https://travis-ci.org/benmatselby/hugo-deploy-gh-pages)
 
-This GitHub action will build your hugo site, and then publish back to GitHub Pages.
+This GitHub action will build your [Hugo site](https://gohugo.io/), and then publish back to [GitHub Pages](https://pages.github.com/).
 
 ## Secrets
 
@@ -12,6 +12,7 @@ This GitHub action will build your hugo site, and then publish back to GitHub Pa
 
 - `GITHUB_ACTOR`: The name of the person or app that initiated the workflow. For example, octocat. [See here](https://developer.github.com/actions/creating-github-actions/accessing-the-runtime-environment/#environment-variables).
 - `TARGET_REPO`: This is the repo slug for the GitHub pages site. e.g. `benmatselby/benmatselby.github.io`.
+- `HUGO_VERSION`: This allows you to control which version of Hugo you want to use. There is a default within the action, but this may be out of date.
 
 ## Example
 
@@ -31,6 +32,7 @@ action "benmatselby/hugo-deploy-gh-pages@master" {
   uses = "benmatselby/hugo-deploy-gh-pages@master"
   env = {
     TARGET_REPO = "benmatselby/benmatselby.github.io"
+    HUGO_VERSION = "0.54.0"
   }
   secrets = ["TOKEN"]
 }
