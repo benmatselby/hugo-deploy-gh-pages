@@ -17,8 +17,16 @@ if [[ -z "$TARGET_REPO" ]]; then
 	exit 1
 fi
 
+if [[ -z "$HUGO_VERSION" ]]; then
+	HUGO_VERSION=0.54.0
+    echo 'No HUGO_VERSION was set, so defaulting to '$HUGO_VERSION
+fi
+
+echo 'Downloading hugo'
+curl -sSL https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz > /tmp/hugo.tar.gz && tar -f /tmp/hugo.tar.gz -xz
+
 echo 'Building the hugo site'
-hugo
+./hugo
 
 echo 'Cloning the GitHub Pages repo'
 BUILD_DIR=build
