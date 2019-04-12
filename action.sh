@@ -18,7 +18,7 @@ if [[ -z "$TARGET_REPO" ]]; then
 fi
 
 if [[ -z "$HUGO_VERSION" ]]; then
-	HUGO_VERSION=0.55.0
+	HUGO_VERSION=0.55.1
     echo 'No HUGO_VERSION was set, so defaulting to '$HUGO_VERSION
 fi
 
