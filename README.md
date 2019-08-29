@@ -1,7 +1,5 @@
 # GitHub Action to build and deploy a Hugo site to GitHub Pages
 
-[![Build Status](https://travis-ci.org/benmatselby/hugo-deploy-gh-pages.png?branch=master)](https://travis-ci.org/benmatselby/hugo-deploy-gh-pages)
-
 This GitHub action will build your [Hugo site](https://gohugo.io/), and then publish back to [GitHub Pages](https://pages.github.com/).
 
 ## Secrets
