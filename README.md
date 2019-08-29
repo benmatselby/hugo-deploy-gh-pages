@@ -15,25 +15,26 @@ This GitHub action will build your [Hugo site](https://gohugo.io/), and then pub
 ## Example
 
 ```shell
-workflow "New workflow" {
-  on = "push"
-  resolves = ["benmatselby/hugo-deploy-gh-pages@master"]
-}
+name: Push to GitHub Pages on push to master
+on:
+  push:
+    branches:
+      - master
 
-action "master" {
-  uses = "actions/bin/filter@master"
-  args = "branch master"
-}
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v1
 
-action "benmatselby/hugo-deploy-gh-pages@master" {
-  needs = "master"
-  uses = "benmatselby/hugo-deploy-gh-pages@master"
-  env = {
-    TARGET_REPO = "benmatselby/benmatselby.github.io"
-    HUGO_VERSION = "0.54.0"
-  }
-  secrets = ["TOKEN"]
-}
+      - name: Deploy the site
+        uses: benmatselby/hugo-deploy-gh-pages@master
+        env:
+          HUGO_VERSION: 0.57.2
+          TARGET_REPO: benmatselby/benmatselby.github.io
+          TOKEN: ${{ secrets.TOKEN }}
 ```
 
 This will:
