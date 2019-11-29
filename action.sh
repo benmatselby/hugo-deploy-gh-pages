@@ -26,6 +26,10 @@ fi
 echo 'Downloading hugo'
 curl -sSL https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz > /tmp/hugo.tar.gz && tar -f /tmp/hugo.tar.gz -xz
 
+echo "Print directory contents"
+find . -maxdepth 2 -type d -exec ls -ld "{}" \;
+
+
 echo 'Building the hugo site'
 ./hugo
 
