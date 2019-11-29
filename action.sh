@@ -2,7 +2,6 @@
 
 set -e
 set -o pipefail
-set -o xtrace
 
 if [[ -n "$TOKEN" ]]; then
 	GITHUB_TOKEN=$TOKEN
@@ -26,10 +25,6 @@ fi
 echo 'Downloading hugo'
 curl -sSL https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz > /tmp/hugo.tar.gz && tar -f /tmp/hugo.tar.gz -xz
 
-echo "Print directory contents"
-find . -maxdepth 2 -type d -exec ls -ld "{}" \;
-
-
 echo 'Building the hugo site'
 if [[ -z "$HUGO_ARGS" ]]; then
     echo '$HUGO_ARGS not set'
@@ -37,8 +32,7 @@ if [[ -z "$HUGO_ARGS" ]]; then
     ./hugo
 else
     echo '$HUGO_ARGS set to'"$HUGO_ARGS"
-    echo 'Just running ./hugo'
-    ./hugo -t $HUGO_ARGS
+    ./hugo $HUGO_ARGS
 fi
 
 TARGET_REPO_URL="https://${GITHUB_TOKEN}@github.com/${TARGET_REPO}.git"
