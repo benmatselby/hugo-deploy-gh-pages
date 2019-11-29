@@ -2,6 +2,7 @@
 
 set -e
 set -o pipefail
+set -o xtrace
 
 if [[ -n "$TOKEN" ]]; then
 	GITHUB_TOKEN=$TOKEN
