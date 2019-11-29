@@ -31,7 +31,15 @@ find . -maxdepth 2 -type d -exec ls -ld "{}" \;
 
 
 echo 'Building the hugo site'
-./hugo
+if [[ -z "$HUGO_ARGS" ]]; then
+    echo '$HUGO_ARGS not set'
+    echo 'Just running ./hugo'
+    ./hugo
+else
+    echo '$HUGO_ARGS set to'"$HUGO_ARGS"
+    echo 'Just running ./hugo'
+    ./hugo -t $HUGO_ARGS
+fi
 
 TARGET_REPO_URL="https://${GITHUB_TOKEN}@github.com/${TARGET_REPO}.git"
 
