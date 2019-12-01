@@ -27,13 +27,11 @@ curl -sSL https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_
 
 echo 'Building the hugo site'
 if [[ -z "$HUGO_ARGS" ]]; then
-    echo '$HUGO_ARGS not set'
-    echo 'Just running ./hugo'
-    ./hugo
+    echo '$HUGO_ARGS not set, just running ./hugo'
 else
     echo '$HUGO_ARGS set to'"$HUGO_ARGS"
-    ./hugo $HUGO_ARGS
 fi
+./hugo $HUGO_ARGS
 
 TARGET_REPO_URL="https://${GITHUB_TOKEN}@github.com/${TARGET_REPO}.git"
 
