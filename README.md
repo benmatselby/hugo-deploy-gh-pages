@@ -11,6 +11,8 @@ This GitHub action will build your [Hugo site](https://gohugo.io/), and then pub
 - `GITHUB_ACTOR`: The name of the person or app that initiated the workflow. For example, octocat. [See here](https://developer.github.com/actions/creating-github-actions/accessing-the-runtime-environment/#environment-variables).
 - `TARGET_REPO`: This is the repo slug for the GitHub pages site. e.g. `benmatselby/benmatselby.github.io`.
 - `HUGO_VERSION`: This allows you to control which version of Hugo you want to use. There is a default within the action, but this may be out of date.
+- `HUGO_ARGS`: Arguments passed to `hugo`.
+- `CNAME`: Contents of a `CNAME` file.
 
 ## Example
 
@@ -35,6 +37,8 @@ jobs:
           HUGO_VERSION: 0.57.2
           TARGET_REPO: benmatselby/benmatselby.github.io
           TOKEN: ${{ secrets.TOKEN }}
+          HUGO_ARGS: '-t academic'
+          CNAME: benmatselby.github.io
 ```
 
 This will:
