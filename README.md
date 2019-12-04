@@ -1,5 +1,7 @@
 # GitHub Action to build and deploy a Hugo site to GitHub Pages
 
+![GitHub Badge](https://github.com/benmatselby/hugo-deploy-gh-pages/workflows/Build/badge.svg)
+
 This GitHub action will build your [Hugo site](https://gohugo.io/), and then publish back to [GitHub Pages](https://pages.github.com/).
 
 ## Secrets
