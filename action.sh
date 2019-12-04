@@ -27,27 +27,27 @@ curl -sSL https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_
 
 echo 'Building the hugo site'
 if [[ -z "$HUGO_ARGS" ]]; then
-    echo '$HUGO_ARGS not set, just running ./hugo'
+    echo 'HUGO_ARGS not set, just running ./hugo'
 else
-    echo '$HUGO_ARGS set to'"$HUGO_ARGS"
+    echo 'HUGO_ARGS set to' "${HUGO_ARGS}"
 fi
-./hugo $HUGO_ARGS
+./hugo "${HUGO_ARGS}"
 
 TARGET_REPO_URL="https://${GITHUB_TOKEN}@github.com/${TARGET_REPO}.git"
 
 rm -rf .git
 cd public
 
-if ! [ -z "${CNAME}" ]; then
-    echo '$CNAME set, creating file CNAME'
-    echo ${CNAME} > CNAME
+if [[ -n "${CNAME}" ]]; then
+    echo 'CNAME set, creating file CNAME'
+    echo "${CNAME}" > CNAME
 fi
 
 echo 'Committing the site to git and pushing'
 
 git init
 
-if git config --get user.name; then
+if ! git config --get user.name; then
     git config --global user.name "${GITHUB_ACTOR}"
 fi
 
@@ -56,11 +56,11 @@ if ! git config --get user.email; then
 fi
 
 echo "Getting hash for base repository commit"
-HASH=$(echo $GITHUB_SHA | cut -c1-7)
+HASH=$(echo "${GITHUB_SHA}" | cut -c1-7)
 
 # Now add all the changes and commit and push
 git add . && \
 git commit -m "Auto Publishing Site from ${GITHUB_REPOSITORY}@${HASH}" && \
-git push --force $TARGET_REPO_URL master:master
+git push --force "${TARGET_REPO_URL}" master:master
 
 echo 'Complete'
