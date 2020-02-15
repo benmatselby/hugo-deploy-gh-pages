@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.2.1
+
+- Addition of some more output to help understand what happens during the action.
+
 ## 1.2.0
 
 - Define the `action.yml` file required for the Marketplace.
