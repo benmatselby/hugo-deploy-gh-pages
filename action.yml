@@ -1,0 +1,25 @@
+name: "Hugo Deploy GitHub Pages"
+author: "benmatselby"
+description: "Build and deploy a hugo site to GitHub Pages"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: "target"
+  color: "purple"
+inputs:
+  hugo_version:
+    description: "The version of hugo to use."
+    required: true
+  github_token:
+    description: "Your PAT to authorise the action to do things."
+    required: true
+  target_repo:
+    description: "The repo name you want to clone and push to."
+    required: true
+  hugo_args:
+    description: "Any extra arguments to pass to Hugo."
+    required: false
+  cname:
+    description: "If you are defining a custom domain name for your GitHub site, put that value in this variable."
+    required: false
