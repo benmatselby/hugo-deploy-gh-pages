@@ -3,34 +3,29 @@
 set -e
 set -o pipefail
 
-if [[ -n "$TOKEN" ]]; then
-	GITHUB_TOKEN=$TOKEN
+if [[ -n "${TOKEN}" ]]; then
+	GITHUB_TOKEN=${TOKEN}
 fi
 
-if [[ -z "$GITHUB_TOKEN" ]]; then
+if [[ -z "${GITHUB_TOKEN}" ]]; then
 	echo "Set the GITHUB_TOKEN env variable."
 	exit 1
 fi
 
-if [[ -z "$TARGET_REPO" ]]; then
+if [[ -z "${TARGET_REPO}" ]]; then
 	echo "Set the TARGET_REPO env variable."
 	exit 1
 fi
 
-if [[ -z "$HUGO_VERSION" ]]; then
+if [[ -z "${HUGO_VERSION}" ]]; then
 	HUGO_VERSION=0.59.1
-    echo 'No HUGO_VERSION was set, so defaulting to '$HUGO_VERSION
+    echo "No HUGO_VERSION was set, so defaulting to ${HUGO_VERSION}"
 fi
 
-echo 'Downloading hugo'
+echo "Downloading Hugo: ${HUGO_VERSION}"
 curl -sSL https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz > /tmp/hugo.tar.gz && tar -f /tmp/hugo.tar.gz -xz
 
-echo 'Building the hugo site'
-if [[ -z "$HUGO_ARGS" ]]; then
-    echo 'HUGO_ARGS not set, just running ./hugo'
-else
-    echo 'HUGO_ARGS set to' "${HUGO_ARGS}"
-fi
+echo "Building the Hugo site with: ./hugo ${HUGO_ARGS}"
 ./hugo "${HUGO_ARGS}"
 
 TARGET_REPO_URL="https://${GITHUB_TOKEN}@github.com/${TARGET_REPO}.git"
@@ -39,11 +34,11 @@ rm -rf .git
 cd public
 
 if [[ -n "${CNAME}" ]]; then
-    echo 'CNAME set, creating file CNAME'
+    echo "CNAME set to ${CNAME}, creating file CNAME"
     echo "${CNAME}" > CNAME
 fi
 
-echo 'Committing the site to git and pushing'
+echo "Committing the site to git and pushing"
 
 git init
 
@@ -60,7 +55,7 @@ HASH=$(echo "${GITHUB_SHA}" | cut -c1-7)
 
 # Now add all the changes and commit and push
 git add . && \
-git commit -m "Auto Publishing Site from ${GITHUB_REPOSITORY}@${HASH}" && \
+git commit -m "Auto publishing site from ${GITHUB_REPOSITORY}@${HASH}" && \
 git push --force "${TARGET_REPO_URL}" master:master
 
-echo 'Complete'
+echo "Complete"
