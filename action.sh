@@ -4,21 +4,21 @@ set -e
 set -o pipefail
 
 if [[ -n "${TOKEN}" ]]; then
-	GITHUB_TOKEN=${TOKEN}
+    GITHUB_TOKEN=${TOKEN}
 fi
 
 if [[ -z "${GITHUB_TOKEN}" ]]; then
-	echo "Set the GITHUB_TOKEN env variable."
-	exit 1
+    echo "Set the GITHUB_TOKEN env variable."
+    exit 1
 fi
 
 if [[ -z "${TARGET_REPO}" ]]; then
-	echo "Set the TARGET_REPO env variable."
-	exit 1
+    echo "Set the TARGET_REPO env variable."
+    exit 1
 fi
 
 if [[ -z "${HUGO_VERSION}" ]]; then
-	HUGO_VERSION=0.59.1
+    HUGO_VERSION=0.65.3
     echo "No HUGO_VERSION was set, so defaulting to ${HUGO_VERSION}"
 fi
 
