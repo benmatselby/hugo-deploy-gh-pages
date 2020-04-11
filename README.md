@@ -6,7 +6,7 @@ This GitHub action will build your [Hugo site](https://gohugo.io/), and then pub
 
 ## Secrets
 
-- `TOKEN`: A GitHub access token that can push to other repos, which in this case will be your GitHub pages repo. We cannot use `GITHUB_TOKEN` as defined [here](https://developer.github.com/actions/creating-github-actions/accessing-the-runtime-environment/#environment-variables) because it is a locally scoped token to a specific repo.
+- `TOKEN`: A GitHub access token that can push to other repos, which in this case will be your GitHub pages repo. We cannot use `GITHUB_TOKEN` as defined [here](https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token#about-the-github_token-secret) because it is a locally scoped token to a specific repo.
 
 ## Environment Variables
 
