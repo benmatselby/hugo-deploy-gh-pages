@@ -56,3 +56,6 @@ To test this action locally, you can run the following in your hugo site:
 ```shell
 TARGET_REPO=benmatselby/benmatselby.github.io ../hugo-deploy-gh-pages/action.sh
 ```
+
+## Tutorial
+For an in depth tutorial, see [this blog post](https://www.jameswright.xyz/post/deploy-hugo-academic-using-githubio/). It is geared mostly at users of the Hugo Academic theme, but should be more broadly applicable.
