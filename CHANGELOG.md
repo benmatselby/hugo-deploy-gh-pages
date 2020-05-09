@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.4.0
+
+- Bump the version hugo used by default to v0.70.0
+
 ## 1.3.0
 
 - Bump the version hugo used by default to v0.65.3
