@@ -22,8 +22,16 @@ if [[ -z "${HUGO_VERSION}" ]]; then
     echo "No HUGO_VERSION was set, so defaulting to ${HUGO_VERSION}"
 fi
 
-echo "Downloading Hugo: ${HUGO_VERSION}"
-curl -sSL https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz > /tmp/hugo.tar.gz && tar -f /tmp/hugo.tar.gz -xz
+if [[ "${HUGO_EXTENDED}" = "true" ]]; then
+  EXTENDED_INFO=" (extended)"
+  EXTENDED_URL="_extended"
+else
+  EXTENDED_INFO=""
+  EXTENDED_URL=""
+fi
+
+echo "Downloading Hugo: ${HUGO_VERSION}${EXTENDED_INFO}"
+curl -sSL https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}${EXTENDED_URL}_Linux-64bit.tar.gz > /tmp/hugo.tar.gz && tar -f /tmp/hugo.tar.gz -xz
 
 echo "Building the Hugo site with: ./hugo ${HUGO_ARGS}"
 ./hugo "${HUGO_ARGS}"

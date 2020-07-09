@@ -11,6 +11,9 @@ inputs:
   hugo_version:
     description: "The version of hugo to use."
     required: true
+  hugo_extended:
+    description: "If set to `true`, use the *extended* version of hugo."
+    required: false
   github_token:
     description: "Your PAT to authorise the action to do things."
     required: true
