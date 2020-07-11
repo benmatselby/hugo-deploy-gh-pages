@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.5.0
+
+- [#28](https://github.com/benmatselby/hugo-deploy-gh-pages/pull/28) Add the ability to use the Extended version of Hugo. Thanks to [Michael Schlottke-Lakemper](https://github.com/sloede).
+- Bump the version hugo used by default to v0.73.0
+- Convert the docker image over to Debian
+
 ## 1.4.0
 
 - Bump the version hugo used by default to v0.70.0
