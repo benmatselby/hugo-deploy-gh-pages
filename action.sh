@@ -24,17 +24,19 @@ fi
 
 if [[ "${HUGO_EXTENDED}" = "true" ]]; then
   EXTENDED_INFO=" (extended)"
-  EXTENDED_URL="_extended"
+  EXTENDED_URL="extended_"
 else
   EXTENDED_INFO=""
   EXTENDED_URL=""
 fi
 
 echo "Downloading Hugo: ${HUGO_VERSION}${EXTENDED_INFO}"
-curl -sSL https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}${EXTENDED_URL}_Linux-64bit.tar.gz > /tmp/hugo.tar.gz && tar -f /tmp/hugo.tar.gz -xz
+URL=https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${EXTENDED_URL}${HUGO_VERSION}_Linux-64bit.deb
+echo "Using '${URL}' to download Hugo"
+curl -sSL "${URL}" > /tmp/hugo.deb && dpkg --force architecture -i /tmp/hugo.deb
 
-echo "Building the Hugo site with: ./hugo ${HUGO_ARGS}"
-./hugo "${HUGO_ARGS}"
+echo "Building the Hugo site with: 'hugo ${HUGO_ARGS}'"
+hugo "${HUGO_ARGS}"
 
 TARGET_REPO_URL="https://${GITHUB_TOKEN}@github.com/${TARGET_REPO}.git"
 
