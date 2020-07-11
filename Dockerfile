@@ -1,11 +1,12 @@
-FROM alpine:latest
+FROM debian:buster-slim
 LABEL maintainer="Ben Selby <benmatselby@gmail.com>"
 
-RUN	apk add --no-cache \
-	bash \
-	ca-certificates \
+RUN apt-get update && \
+	apt-get install -y --no-install-recommends \
+	ca-certificates  \
 	curl \
-	git
+	git && \
+	rm -rf /var/lib/apt/lists/*
 
 COPY action.sh /usr/bin/action.sh
 
