@@ -13,7 +13,7 @@ This GitHub action will build your [Hugo site](https://gohugo.io/), and then pub
 - `GITHUB_ACTOR`: The name of the person or app that initiated the workflow. For example, octocat. [See here](https://developer.github.com/actions/creating-github-actions/accessing-the-runtime-environment/#environment-variables).
 - `TARGET_REPO`: This is the repo slug for the GitHub pages site. e.g. `benmatselby/benmatselby.github.io`.
 - `HUGO_VERSION`: This allows you to control which version of Hugo you want to use. There is a default within the action, but this may be out of date.
-- `HUGO_EXTENDED`: If set to `true`, the *extended* version of Hugo will be used.
+- `HUGO_EXTENDED`: If set to `true`, the _extended_ version of Hugo will be used. Default is `false`.
 - `HUGO_ARGS`: Arguments passed to `hugo`.
 - `CNAME`: Contents of a `CNAME` file.
 
@@ -54,8 +54,35 @@ This will:
 
 To test this action locally, you can run the following in your hugo site:
 
+Build the docker image
+
 ```shell
-TARGET_REPO=benmatselby/benmatselby.github.io ../hugo-deploy-gh-pages/action.sh
+docker build --pull --rm -f "Dockerfile" -t hugodeployghpages:latest .
+```
+
+Run the standard version of Hugo and the action.
+
+```shell
+# cd to your hugo site
+docker run --rm \
+  -eGITHUB_TOKEN \
+  -eTARGET_REPO=benmatselby/benmatselby.github.io \
+  -v "$(pwd)":/site/ \
+  --workdir /site \
+  hugodeployghpages
+```
+
+Run the extended version of Hugo, and the action.
+
+```shell
+# cd to your hugo site
+docker run --rm \
+  -eHUGO_EXTENDED=true \
+  -eGITHUB_TOKEN \
+  -eTARGET_REPO=benmatselby/benmatselby.github.io \
+  -v "$(pwd)":/site/ \
+  --workdir /site \
+  hugodeployghpages
 ```
 
 ## Tutorial
