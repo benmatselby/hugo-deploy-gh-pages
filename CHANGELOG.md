@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.6.0
+
+- Add capability to push public files to target branch
+
 ## 1.5.0
 
 - [#28](https://github.com/benmatselby/hugo-deploy-gh-pages/pull/28) Add the ability to use the Extended version of Hugo. Thanks to [Michael Schlottke-Lakemper](https://github.com/sloede).
