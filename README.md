@@ -50,7 +50,7 @@ This will:
 
 - Clone the `TARGET_REPO` into the `build` folder.
 - Commit the changes with the `date` as the git commit message.
-- Push back to GitHub in master branch.
+- Push back to GitHub using the `TARGET_BRANCH` environment variable.
 
 ## Testing
 
