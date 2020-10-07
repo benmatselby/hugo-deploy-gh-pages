@@ -17,8 +17,13 @@ if [[ -z "${TARGET_REPO}" ]]; then
     exit 1
 fi
 
+if [[ -z "${TARGET_BRANCH}" ]]; then
+    TARGET_BRANCH=master
+    echo "No TARGET_BRANCH was set, so defaulting to ${TARGET_BRANCH}"
+fi
+
 if [[ -z "${HUGO_VERSION}" ]]; then
-    HUGO_VERSION=0.73.0
+    HUGO_VERSION=0.76.1
     echo "No HUGO_VERSION was set, so defaulting to ${HUGO_VERSION}"
 fi
 
@@ -64,8 +69,12 @@ echo "Getting hash for base repository commit"
 HASH=$(echo "${GITHUB_SHA}" | cut -c1-7)
 
 # Now add all the changes and commit and push
+if [[ "${TARGET_BRANCH}" != "master" ]]; then
+  git checkout -b ${TARGET_BRANCH}
+fi
+
 git add . && \
 git commit -m "Auto publishing site from ${GITHUB_REPOSITORY}@${HASH}" && \
-git push --force "${TARGET_REPO_URL}" master:master
+git push --force "${TARGET_REPO_URL}" ${TARGET_BRANCH}
 
 echo "Complete"

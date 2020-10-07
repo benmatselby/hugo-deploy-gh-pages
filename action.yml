@@ -20,6 +20,9 @@ inputs:
   target_repo:
     description: "The repo name you want to clone and push to."
     required: true
+  target_branch:
+    description: "The branch to push the hugo public files, default will be master branch."
+    required: false
   hugo_args:
     description: "Any extra arguments to pass to Hugo."
     required: false
