@@ -38,7 +38,7 @@ jobs:
       - name: Deploy the site
         uses: benmatselby/hugo-deploy-gh-pages@master
         env:
-          HUGO_VERSION: 0.57.2
+          HUGO_VERSION: 0.79.1
           TARGET_REPO: benmatselby/benmatselby.github.io
           TARGET_BRANCH: master
           TOKEN: ${{ secrets.TOKEN }}

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.7.0
+
+- Bumped the version of hugo to v0.79.1
+
 ## 1.6.0
 
 - Add capability to push public files to target branch
@@ -7,16 +11,16 @@
 ## 1.5.0
 
 - [#28](https://github.com/benmatselby/hugo-deploy-gh-pages/pull/28) Add the ability to use the Extended version of Hugo. Thanks to [Michael Schlottke-Lakemper](https://github.com/sloede).
-- Bump the version hugo used by default to v0.73.0
+- Bumped the version of hugo to v0.73.0
 - Convert the docker image over to Debian
 
 ## 1.4.0
 
-- Bump the version hugo used by default to v0.70.0
+- Bumped the version of hugo to v0.70.0
 
 ## 1.3.0
 
-- Bump the version hugo used by default to v0.65.3
+- Bumped the version of hugo to v0.65.3
 
 ## 1.2.1
 
