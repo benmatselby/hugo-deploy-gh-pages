@@ -23,7 +23,7 @@ if [[ -z "${TARGET_BRANCH}" ]]; then
 fi
 
 if [[ -z "${HUGO_VERSION}" ]]; then
-    HUGO_VERSION=0.80.1
+    HUGO_VERSION=0.81.0
     echo "No HUGO_VERSION was set, so defaulting to ${HUGO_VERSION}"
 fi
 
@@ -36,7 +36,7 @@ else
 fi
 
 echo "Downloading Hugo: ${HUGO_VERSION}${EXTENDED_INFO}"
-URL=https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${EXTENDED_URL}${HUGO_VERSION}_Linux-64bit.deb
+URL=https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${EXTENDED_URL}${HUGO_VERSION}_Linux-64bit.deb
 echo "Using '${URL}' to download Hugo"
 curl -sSL "${URL}" > /tmp/hugo.deb && dpkg --force architecture -i /tmp/hugo.deb
 
