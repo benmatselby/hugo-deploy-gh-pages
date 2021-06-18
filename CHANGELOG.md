@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Release-next
+## 1.10.0
 
 - Bumped the version of hugo to v0.83.1
 
