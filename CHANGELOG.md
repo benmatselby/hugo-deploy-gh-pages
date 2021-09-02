@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.11.0
+
+- Bumped the version of hugo to v0.88.0
+
 ## 1.10.0
 
 - Bumped the version of hugo to v0.83.1
