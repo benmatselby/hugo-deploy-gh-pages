@@ -23,7 +23,7 @@ if [[ -z "${TARGET_BRANCH}" ]]; then
 fi
 
 if [[ -z "${HUGO_VERSION}" ]]; then
-    HUGO_VERSION=0.88.0
+    HUGO_VERSION=$(curl -H "Accept: application/vnd.github.v3+json" "https://api.github.com/repos/gohugoio/hugo/releases?page=1&per_page=1" | jq -r ".[].tag_name" | sed 's/v//g')
     echo "No HUGO_VERSION was set, so defaulting to ${HUGO_VERSION}"
 fi
 

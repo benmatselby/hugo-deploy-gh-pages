@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.12.0
+
+- Always pull the latest Hugo release, if there is not one set.
+
 ## 1.11.0
 
 - Bumped the version of hugo to v0.88.0
