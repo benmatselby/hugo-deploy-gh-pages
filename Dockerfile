@@ -6,6 +6,7 @@ RUN apt-get update && \
 	ca-certificates  \
 	curl \
 	jq \
+	golang \
 	git && \
 	rm -rf /var/lib/apt/lists/*
 
