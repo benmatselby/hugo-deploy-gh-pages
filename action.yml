@@ -14,6 +14,9 @@ inputs:
   github_token:
     description: "Your PAT to authorise the action to do things."
     required: true
+  go_version:
+    description: "The version of Go to install. Go won't be installed if this isn't set."
+    required: false
   hugo_args:
     description: "Any extra arguments to pass to Hugo."
     required: false

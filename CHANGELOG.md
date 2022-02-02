@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.13.0
+
+- All users to optionally install Go within the action environment. This is not required to deploy the Hugo site.
+
 ## 1.12.0
 
 - Always pull the latest Hugo release, if there is not one set.
