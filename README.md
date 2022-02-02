@@ -10,13 +10,14 @@ This GitHub action will build your [Hugo site](https://gohugo.io/), and then pub
 
 ## Environment Variables
 
-- `GITHUB_ACTOR`: The name of the person or app that initiated the workflow. For example, octocat. [See here](https://developer.github.com/actions/creating-github-actions/accessing-the-runtime-environment/#environment-variables).
-- `TARGET_REPO`: This is the repo slug for the GitHub pages site. e.g. `benmatselby/benmatselby.github.io`.
-- `TARGET_BRANCH`: This is the branch to push the public files e.g. `docs`. Default is `master` branch.
-- `HUGO_VERSION`: This allows you to control which version of Hugo you want to use. The default is to pull the latest version.
-- `HUGO_EXTENDED`: If set to `true`, the _extended_ version of Hugo will be used. Default is `false`.
-- `HUGO_ARGS`: Arguments passed to `hugo`.
 - `CNAME`: Contents of a `CNAME` file.
+- `GITHUB_ACTOR`: The name of the person or app that initiated the workflow. For example, octocat. [See here](https://developer.github.com/actions/creating-github-actions/accessing-the-runtime-environment/#environment-variables).
+- `GO_VERSION`: The version of Go you may want to install. This is not required for basic operation. Values should be in the format of `1.17`.
+- `HUGO_ARGS`: Arguments passed to `hugo`.
+- `HUGO_EXTENDED`: If set to `true`, the _extended_ version of Hugo will be used. Default is `false`.
+- `HUGO_VERSION`: This allows you to control which version of Hugo you want to use. The default is to pull the latest version.
+- `TARGET_BRANCH`: This is the branch to push the public files e.g. `docs`. Default is `master` branch.
+- `TARGET_REPO`: This is the repo slug for the GitHub pages site. e.g. `benmatselby/benmatselby.github.io`.
 
 ## Example
 
