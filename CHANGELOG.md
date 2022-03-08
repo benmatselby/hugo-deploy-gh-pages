@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.14.0
+
+- Allow users to specify the `HUGO_PUBLISH_DIR` environment variable. Resolves [#43](https://github.com/benmatselby/hugo-deploy-gh-pages/issues/43)
+
 ## 1.13.0
 
 - All users to optionally install Go within the action environment. This is not required to deploy the Hugo site.

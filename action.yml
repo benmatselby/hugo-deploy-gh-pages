@@ -23,6 +23,9 @@ inputs:
   hugo_extended:
     description: "If set to `true`, use the *extended* version of hugo."
     required: false
+  hugo_publish_dir:
+    description: "The publishDir from the hugo config.toml file"
+    required: false
   hugo_version:
     description: "The version of hugo to use."
     required: true

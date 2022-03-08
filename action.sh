@@ -7,22 +7,27 @@ set -o pipefail
 # Environment variable definitions.
 ##
 if [[ -n "${TOKEN}" ]]; then
-    GITHUB_TOKEN=${TOKEN}
+  GITHUB_TOKEN=${TOKEN}
 fi
 
 if [[ -z "${GITHUB_TOKEN}" ]]; then
-    echo "Set the GITHUB_TOKEN env variable."
-    exit 1
+  echo "Set the GITHUB_TOKEN env variable."
+  exit 1
 fi
 
 if [[ -z "${TARGET_REPO}" ]]; then
-    echo "Set the TARGET_REPO env variable."
-    exit 1
+  echo "Set the TARGET_REPO env variable."
+  exit 1
 fi
 
 if [[ -z "${TARGET_BRANCH}" ]]; then
-    TARGET_BRANCH=master
-    echo "No TARGET_BRANCH was set, so defaulting to ${TARGET_BRANCH}"
+  TARGET_BRANCH=master
+  echo "No TARGET_BRANCH was set, so defaulting to ${TARGET_BRANCH}"
+fi
+
+if [[ -z "${HUGO_PUBLISH_DIR}" ]]; then
+  HUGO_PUBLISH_DIR=public
+  echo "No HUGO_PUBLISH_DIR was set, so defaulting to ${HUGO_PUBLISH_DIR}"
 fi
 
 if [[ -z "${HUGO_VERSION}" ]]; then
@@ -80,13 +85,14 @@ hugo "${HUGO_ARGS}"
 TARGET_REPO_URL="https://${GITHUB_TOKEN}@github.com/${TARGET_REPO}.git"
 
 rm -rf .git
-cd public
+cd ${HUGO_PUBLISH_DIR}
 
 if [[ -n "${CNAME}" ]]; then
     echo "CNAME set to ${CNAME}, creating file CNAME"
     echo "${CNAME}" > CNAME
 fi
 
+exit;
 echo "Committing the site to git and pushing"
 
 git init
