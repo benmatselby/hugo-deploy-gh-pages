@@ -92,7 +92,6 @@ if [[ -n "${CNAME}" ]]; then
     echo "${CNAME}" > CNAME
 fi
 
-exit;
 echo "Committing the site to git and pushing"
 
 git init
