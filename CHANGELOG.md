@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.15.0
+
+- Remove an early exit statement, identified by [bearylogical](https://github.com/bearylogical)
+
 ## 1.14.0
 
 - Allow users to specify the `HUGO_PUBLISH_DIR` environment variable. Resolves [#43](https://github.com/benmatselby/hugo-deploy-gh-pages/issues/43)
