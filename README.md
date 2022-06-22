@@ -17,32 +17,32 @@ This GitHub action will build your [Hugo site](https://gohugo.io/), and then pub
 - `HUGO_EXTENDED`: If set to `true`, the _extended_ version of Hugo will be used. Default is `false`.
 - `HUGO_PUBLISH_DIR`: Specify if you do not use the Hugo default of `public`.
 - `HUGO_VERSION`: This allows you to control which version of Hugo you want to use. The default is to pull the latest version.
-- `TARGET_BRANCH`: This is the branch to push the public files e.g. `docs`. Default is `master` branch.
+- `TARGET_BRANCH`: This is the branch to push the public files e.g. `docs`. Default is `main` branch.
 - `TARGET_REPO`: This is the repo slug for the GitHub pages site. e.g. `benmatselby/benmatselby.github.io`.
 
 ## Example
 
 ```shell
-name: Push to GitHub Pages on push to master
+name: Push to GitHub Pages on push to main
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout master
+      - name: Checkout code
         uses: actions/checkout@v1
 
       - name: Deploy the site
-        uses: benmatselby/hugo-deploy-gh-pages@master
+        uses: benmatselby/hugo-deploy-gh-pages@main
         env:
           HUGO_VERSION: 0.88.0
           TARGET_REPO: benmatselby/benmatselby.github.io
-          TARGET_BRANCH: master
+          TARGET_BRANCH: main
           TOKEN: ${{ secrets.TOKEN }}
           HUGO_ARGS: '-t academic'
           CNAME: benmatselby.github.io
