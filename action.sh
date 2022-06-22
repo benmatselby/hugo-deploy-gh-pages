@@ -21,7 +21,7 @@ if [[ -z "${TARGET_REPO}" ]]; then
 fi
 
 if [[ -z "${TARGET_BRANCH}" ]]; then
-  TARGET_BRANCH=master
+  TARGET_BRANCH=main
   echo "No TARGET_BRANCH was set, so defaulting to ${TARGET_BRANCH}"
 fi
 
@@ -110,7 +110,7 @@ HASH=$(echo "${GITHUB_SHA}" | cut -c1-7)
 ###
 # Now add all the changes and commit and push
 ###
-if [[ "${TARGET_BRANCH}" != "master" ]]; then
+if [[ "${TARGET_BRANCH}" != "main" ]]; then
   git checkout -b ${TARGET_BRANCH}
 fi
 

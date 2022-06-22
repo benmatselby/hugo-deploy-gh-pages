@@ -28,10 +28,10 @@ rm README.md.orig action.sh.orig
 if [[ "${CURRENT_VERSION}" != "${LATEST_VERSION}" ]]; then
   printf "Raising pull request"
   TITLE="Upgrading Hugo to ${LATEST_VERSION}"
-  git checkout -b "${LATEST_VERSION}" origin/master
+  git checkout -b "${LATEST_VERSION}" origin/main
   git add action.sh README.md
   git commit -m "${TITLE}"
   git push origin "${LATEST_VERSION}"
   gh pr create --body "${TITLE}" --title "${TITLE}"
-  git checkout master
+  git checkout main
 fi
