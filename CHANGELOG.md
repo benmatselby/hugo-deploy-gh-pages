@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.16.0
+
+- Switched the default branch to `main` from `master`.
+
 ## 1.15.0
 
 - Remove an early exit statement, identified by [bearylogical](https://github.com/bearylogical)
