@@ -110,9 +110,7 @@ HASH=$(echo "${GITHUB_SHA}" | cut -c1-7)
 ###
 # Now add all the changes and commit and push
 ###
-if [[ "${TARGET_BRANCH}" != "main" ]]; then
-  git checkout -b ${TARGET_BRANCH}
-fi
+git checkout -b ${TARGET_BRANCH}
 
 git add . && \
 git commit -m "Auto publishing site from ${GITHUB_REPOSITORY}@${HASH}" && \
