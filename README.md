@@ -70,6 +70,7 @@ Run the standard version of Hugo and the action.
 # cd to your hugo site
 docker run --rm \
   -eGITHUB_TOKEN \
+  -eGITHUB_ACTOR \
   -eTARGET_REPO=benmatselby/benmatselby.github.io \
   -v "$(pwd)":/site/ \
   --workdir /site \
@@ -83,6 +84,7 @@ Run the extended version of Hugo, and the action.
 docker run --rm \
   -eHUGO_EXTENDED=true \
   -eGITHUB_TOKEN \
+  -eGITHUB_ACTOR \
   -eTARGET_REPO=benmatselby/benmatselby.github.io \
   -v "$(pwd)":/site/ \
   --workdir /site \
