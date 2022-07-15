@@ -69,7 +69,7 @@ if [[ -n "${GO_VERSION}" ]]; then
     /usr/local/go/pkg/tool/*/api \
     /usr/local/go/pkg/tool/*/go_bootstrap \
     /usr/local/go/src/cmd/dist/dist \
-    /tmp/go.tag.gz
+    /tmp/go.tar.gz
 
   # Provide version details and sanity check installation
   echo "Installed Go: ${GO_VERSION}"
