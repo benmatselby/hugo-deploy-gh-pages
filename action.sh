@@ -47,10 +47,11 @@ fi
 # Downloading of Hugo.
 ###
 echo "Downloading Hugo: ${HUGO_VERSION}${EXTENDED_INFO}"
-URL=https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${EXTENDED_URL}${HUGO_VERSION}_Linux-64bit.deb
+URL=https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${EXTENDED_URL}${HUGO_VERSION}_Linux-64bit.tar.gz
 echo "Using '${URL}' to download Hugo"
-curl -sSL "${URL}" > /tmp/hugo.deb && dpkg --force architecture -i /tmp/hugo.deb
-
+curl -sSL "${URL}" > /tmp/hugo.tar.gz
+tar -C /tmp -xf /tmp/hugo.tar.gz
+mv /tmp/hugo /usr/bin/hugo
 
 ###
 # Optionally install Go.
