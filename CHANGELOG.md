@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.0
+
+- Switched over to downloading the `Linux-64bit.tar.gz` file. See [this issue](https://github.com/gohugoio/hugo/issues/10331) for more context.
+
 ## 1.16.0
 
 - Switched the default branch to `main` from `master`.
