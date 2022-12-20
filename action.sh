@@ -77,6 +77,9 @@ if [[ -n "${GO_VERSION}" ]]; then
   go version
 fi
 
+# https://github.com/actions/checkout/issues/766
+git config --global --add safe.directory "${PWD}"
+
 ###
 # Build the site.
 ###
