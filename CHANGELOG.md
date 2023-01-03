@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.1.0
+
+- Fix: [#50](https://github.com/benmatselby/hugo-deploy-gh-pages/pull/50) Mark the current working directory as safe. Thanks to [Jiri Popelka](https://github.com/jpopelka) for the contribution.
+
 ## 2.0.0
 
 - Switched over to downloading the `Linux-64bit.tar.gz` file. See [this issue](https://github.com/gohugoio/hugo/issues/10331) for more context.
@@ -54,15 +58,15 @@
 - Bumped the version of hugo to v0.73.0
 - Convert the docker image over to Debian
 
-## 1.4.0
+## 1.4.0
 
 - Bumped the version of hugo to v0.70.0
 
-## 1.3.0
+## 1.3.0
 
 - Bumped the version of hugo to v0.65.3
 
-## 1.2.1
+## 1.2.1
 
 - Addition of some more output to help understand what happens during the action.
 
