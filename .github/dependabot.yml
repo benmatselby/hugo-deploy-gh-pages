@@ -31,6 +31,9 @@ updates:
       interval: 'weekly'
     commit-message:
       prefix: 'php'
+    groups:
+      development-dependencies:
+        dependency-type: 'development'
 
   # Maintain dependencies for npm
   - package-ecosystem: 'npm'
