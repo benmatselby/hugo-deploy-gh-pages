@@ -7,31 +7,3 @@ runs:
 branding:
   icon: "target"
   color: "purple"
-inputs:
-  cname:
-    description: "If you are defining a custom domain name for your GitHub site, put that value in this variable."
-    required: false
-  github_token:
-    description: "Your PAT to authorise the action to do things."
-    required: true
-  go_version:
-    description: "The version of Go to install. Go won't be installed if this isn't set."
-    required: false
-  hugo_args:
-    description: "Any extra arguments to pass to Hugo."
-    required: false
-  hugo_extended:
-    description: "If set to `true`, use the *extended* version of hugo."
-    required: false
-  hugo_publish_dir:
-    description: "The publishDir from the hugo config.toml file"
-    required: false
-  hugo_version:
-    description: "The version of hugo to use."
-    required: true
-  target_branch:
-    description: "The branch to push the hugo public files, default will be main branch."
-    required: false
-  target_repo:
-    description: "The repo name you want to clone and push to."
-    required: true
