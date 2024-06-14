@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.2.0
+
+- Fix: [#57](https://github.com/benmatselby/hugo-deploy-gh-pages/issues/57) Tidy up the `action.yml` configuration file. Thanks to [Daniel Terhorst-North](https://github.com/tastapod) for the contribution.
+
 ## 2.1.0
 
 - Fix: [#50](https://github.com/benmatselby/hugo-deploy-gh-pages/pull/50) Mark the current working directory as safe. Thanks to [Jiri Popelka](https://github.com/jpopelka) for the contribution.
