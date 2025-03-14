@@ -5,8 +5,8 @@ LABEL maintainer="Ben Selby <benmatselby@gmail.com>"
 # Define the location of Go.
 # We may not always install it, but if we do, it's here.
 ##
-ENV GOPATH /go
-ENV PATH /go/bin:/usr/local/go/bin:$PATH
+ENV GOPATH=/go
+ENV PATH=/go/bin:/usr/local/go/bin:$PATH
 
 ##
 # Installation of all the tooling we need.
