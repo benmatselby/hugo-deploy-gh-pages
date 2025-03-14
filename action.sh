@@ -93,7 +93,7 @@ hugo "${HUGO_ARGS}"
 TARGET_REPO_URL="https://${GITHUB_TOKEN}@github.com/${TARGET_REPO}.git"
 
 rm -rf .git
-cd ${HUGO_PUBLISH_DIR}
+cd "${HUGO_PUBLISH_DIR}"
 
 if [[ -n "${CNAME}" ]]; then
     echo "CNAME set to ${CNAME}, creating file CNAME"
@@ -123,10 +123,10 @@ HASH=$(echo "${GITHUB_SHA}" | cut -c1-7)
 ###
 # Now add all the changes and commit and push
 ###
-git checkout -b ${TARGET_BRANCH}
+git checkout -b "${TARGET_BRANCH}"
 
 git add . && \
 git commit -m "Auto publishing site from ${GITHUB_REPOSITORY}@${HASH}" && \
-git push --force "${TARGET_REPO_URL}" ${TARGET_BRANCH}
+git push --force "${TARGET_REPO_URL}" "${TARGET_BRANCH}"
 
 echo "Complete"
