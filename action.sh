@@ -77,6 +77,12 @@ if [[ -n "${GO_VERSION}" ]]; then
   go version
 fi
 
+###
+# Git config for private repositories
+# This is needed if you're using hugo mod themes with private repositories
+###
+git config --global url."https://${GITHUB_TOKEN}@github.com/".insteadOf 'https://github.com/'
+
 
 ###
 # Build the site.
