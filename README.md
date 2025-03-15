@@ -4,6 +4,9 @@
 
 This GitHub action will build your [Hugo site](https://gohugo.io/), and then publish back to [GitHub Pages](https://pages.github.com/).
 
+> [!NOTE]
+> Hugo is installed inside a docker container. If you need more freedom with Hugo, you may require a different [action](https://github.com/marketplace?query=hugo).
+
 ## Secrets
 
 - `TOKEN`: A GitHub access token that can push to other repos, which in this case will be your GitHub pages repo. We cannot use `GITHUB_TOKEN` as defined [here](https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token#about-the-github_token-secret) because it is a locally scoped token to a specific repo.
