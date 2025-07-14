@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 2.4.0
+
+- Update the Dockerfile to `debian:bookworm-slim`. Thanks to [Daniel Terhorst-North](https://github.com/tastapod) for the contribution.
+
+## 2.3.0
+
+- Define config for git (and go) to access private repositories
+
 ## 2.2.0
 
 - Fix: [#57](https://github.com/benmatselby/hugo-deploy-gh-pages/issues/57) Tidy up the `action.yml` configuration file. Thanks to [Daniel Terhorst-North](https://github.com/tastapod) for the contribution.
