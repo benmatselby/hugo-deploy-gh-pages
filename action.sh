@@ -106,8 +106,9 @@ echo "Committing the site to git and pushing"
 
 git init
 
-
-
+###
+# Setup the git configuration for the newly init'd repo
+###
 if ! git config --get user.name; then
     git config --global user.name "${GITHUB_ACTOR}"
 fi
