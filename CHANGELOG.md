@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.5.0
+
+- Fix: [Mark the current directory as "git safe"](https://github.com/benmatselby/hugo-deploy-gh-pages/pull/66). Thanks to [Matej Focko](https://github.com/mfocko) for the contribution.
+
 ## 2.4.0
 
 - Update the Dockerfile to `debian:bookworm-slim`. Thanks to [Daniel Terhorst-North](https://github.com/tastapod) for the contribution.
