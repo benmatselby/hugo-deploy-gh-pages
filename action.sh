@@ -83,6 +83,8 @@ fi
 ###
 git config --global url."https://${GITHUB_TOKEN}@github.com/".insteadOf 'https://github.com/'
 
+# https://github.com/actions/checkout/issues/766
+git config --global --add safe.directory "${PWD}"
 
 ###
 # Build the site.
