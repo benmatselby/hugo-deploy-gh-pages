@@ -38,12 +38,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v6
 
       - name: Deploy the site
         uses: benmatselby/hugo-deploy-gh-pages@main
         env:
-          HUGO_VERSION: 0.88.0
+          HUGO_VERSION: 0.153.3
           TARGET_REPO: benmatselby/benmatselby.github.io
           TARGET_BRANCH: main
           TOKEN: ${{ secrets.TOKEN }}
